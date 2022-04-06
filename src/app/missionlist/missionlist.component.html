@@ -1,0 +1,5 @@
+<h1 class="header">SpaceX Mission Launch List</h1>
+
+<mat-list *ngFor="let mission of missionData; let i = index">
+  <app-missiondetails [item]="mission"></app-missiondetails>
+</mat-list>

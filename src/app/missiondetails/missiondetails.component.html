@@ -1,0 +1,73 @@
+<mat-list-item
+  (click)="openclose()"
+  style="padding-top: 50px; padding-bottom: 50px; width: 80vw"
+  *ngIf="seeDetails === false"
+  class="smallDetails"
+>
+  <img
+    mat-list-avatar
+    src="{{ mission.links.mission_patch_small }}"
+    style="width: 200px; height: 200px"
+  />
+  <div mat-line>
+    <h1>{{ mission.mission_name }}</h1>
+  </div>
+  <div mat-line>
+    <h4>{{ mission.launch_year }}</h4>
+  </div>
+  <div
+    mat-line
+    style="word-wrap: break-word; white-space: pre-wrap; size: 30px"
+  >
+    Details:<br />{{ mission.details }}
+  </div>
+  <div mat-line></div>
+</mat-list-item>
+
+<mat-list-item
+  (click)="openclose()"
+  style="padding-top: 50px; padding-bottom: 50px; width: 80vw"
+  *ngIf="seeDetails === true"
+  class="popmenu"
+>
+  <img
+    mat-list-avatar
+    src="{{ mission.links.mission_patch_small }}"
+    style="width: 200px; height: 200px"
+  />
+  <div mat-line><h1>SpaceX Mission Details</h1></div>
+  <div mat-line>
+    <h1>Mission - {{ mission.mission_name }}</h1>
+  </div>
+  <div mat-line>
+    <p>Launch Year: {{ mission.launch_year }}</p>
+  </div>
+  <div mat-line><h2>Rocket</h2></div>
+  <div mat-line>
+    <p>
+      Name: {{ mission.rocket.rocket_name }}, Type:
+      {{ mission.rocket.rocket_type }}
+    </p>
+  </div>
+  <div mat-line><h2>Launch Site</h2></div>
+  <div mat-line>
+    <p>Name: {{ mission.launch_site.site_name_long }}</p>
+  </div>
+  <div mat-line><h2>Launch Details</h2></div>
+  <div mat-line style="word-wrap: break-word; white-space: pre-wrap">
+    {{ mission.details }}
+  </div>
+  <div mat-line><h2>More Info on Launch Details</h2></div>
+  <div mat-line>
+    <a href="{{ mission.links.video_link }}" rel="noopener noreferrer"
+      ><mat-icon>ondemand_video</mat-icon></a
+    >
+    <a href="{{ mission.links.wikipedia }}" rel="noopener noreferrer"
+      ><mat-icon>public</mat-icon></a
+    >
+    <a href="{{ mission.links.article_link }}" rel="noopener noreferrer"
+      ><mat-icon>assignment</mat-icon></a
+    >
+  </div>
+  <div mat-line></div>
+</mat-list-item>
